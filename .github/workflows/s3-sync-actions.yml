@@ -7,7 +7,7 @@ on:
       - 's3-sync-actions'
 
 jobs:
-  "aws-secure-access"
+  "aws-secure-access":
     name: 's3-sync'
     runs-on: ubuntu-latest
     steps:
