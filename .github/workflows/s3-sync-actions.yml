@@ -15,3 +15,8 @@ jobs:
     - uses: jakejarvis/s3-sync-action@main
         with:
           args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*'
+
+      run: 
+      pip install awscli
+      ls -al
+      aws s3 sync . s3://yatah-bucket
