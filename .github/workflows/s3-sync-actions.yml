@@ -1,16 +1,12 @@
 # This is a basic workflow to help you get started with Actions
-
 name: s3-sync-actions
-
 on:
-  push:
+  push: 
     branches:
     - 'main'
     - 's3-sync-actions'
 
-
 jobs:
-
   "aws-secure-access"
 
     name: 's3-sync-actions'
