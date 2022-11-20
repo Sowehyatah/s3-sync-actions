@@ -14,6 +14,6 @@ jobs:
     - uses: actions/checkout@main
     - uses: jakejarvis/s3-sync-action@main  
       run: 
-      pip install awscli
-      ls -al
-      aws s3 sync . s3://yatah-bucket
+        pip install awscli
+        ls -al
+        aws s3 sync . s3://yatah-bucket
