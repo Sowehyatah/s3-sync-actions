@@ -9,16 +9,16 @@ on:
 jobs:
   "aws-secure-access"
 
-    name: 's3-sync-actions'
+    name: 's3-sync'
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-      - uses: actions/checkout@s3-sync-actions
-      - uses: jakejarvis/s3-sync-action@main 
+      - uses: actions/checkout@s3-sync
+      - uses: jakejarvis/s3-sync@main 
 
         with: 
           account: '010055500698'
-      - name: s3-sync-actions
+      - name: s3-sync
         run: 
           pip install awscli
           ls -al
