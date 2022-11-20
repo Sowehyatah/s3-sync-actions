@@ -8,7 +8,6 @@ on:
 
 jobs:
   "aws-secure-access"
-
     name: 's3-sync'
     runs-on: ubuntu-latest
     steps:
