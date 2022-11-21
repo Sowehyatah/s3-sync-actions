@@ -9,13 +9,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: main-user
     steps:
+      - name: checkout
       - uses: Sowehyatah/s3-sync-actions@s3-sync-actions
 
       - name: sync-s3
         uses: Sowehyatah/s3-sync-actions@s3-sync-actions
         with:
           
-          originIgnore: '[".*/"]'
+          
           target: 'aws s3 sync . s3://yatah-bucket'
