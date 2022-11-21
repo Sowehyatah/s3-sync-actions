@@ -1,31 +1,21 @@
-name: s3-sync
+
+
+name: sync-s3
 
 on:
-  push: 
+  push:
     branches:
-      - 'main'
-      - 's3-sync-actions'
+      - s3-sync-actions
 
 jobs:
-  "aws-secure-access":
-    name: 's3-sync'
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-      - uses: actions/checkout@s3-sync
+      - uses: actions/checkout@s3-sync-actions
 
+      - name: sync-s3
+        uses: Sowehyatah/s3-sync-actions@s3-sync-actions
         with:
-         fetch-depth: 0
-
-      - name: s3-sync
-      - uses: jakejarvis/s3-sync@main
-       
-        with: 
-          account: '010055500698'
-      - name: s3-sync
-      - uses: jakejarvis/s3-sync@main
-
-        run: 
-          pip install awscli
-          ls -al
-          aws s3 sync . s3://yatah-bucket
+          
+          originIgnore: '[".*/"]'
+          target: 'aws s3 sync . s3://yatah-bucket'
