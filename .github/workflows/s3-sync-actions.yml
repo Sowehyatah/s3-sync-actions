@@ -13,8 +13,13 @@ jobs:
     steps:
       - name: checkout
       - uses: actions/checkout@s3-sync
-       
 
+        with:
+         fetch-depth: 0
+
+      - name: s3-sync
+      - uses: jakejarvis/s3-sync@main
+       
         with: 
           account: '010055500698'
       - name: s3-sync
